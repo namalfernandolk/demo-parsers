@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HotelValuedAvailRQ>
+	<OccupancyList>OccupancyList/HotelOccupancy[@arg = 'arg-value1']/Room/@code
+		<HotelOccupancy arg="arg-value1">
+			<Room code="SGL">Single Room</Room>
+			<RoomCount>1</RoomCount>
+			<Occupancy>
+				<AdultCount>1</AdultCount>
+				<ChildCount>2</ChildCount>
+				<GuestList>
+					<Customer type="CH">
+						<Age>3</Age>
+					</Customer>
+					<Customer type="CH">
+						<Age>4</Age>
+					</Customer>
+				</GuestList>
+			</Occupancy>
+		</HotelOccupancy>
+		<HotelOccupancy arg="arg-value2">
+			<Room code="DBL">Double Room</Room>
+			<RoomCount>1</RoomCount>
+			<Occupancy>
+				<AdultCount>2</AdultCount>
+				<ChildCount>0</ChildCount>
+			</Occupancy>
+		</HotelOccupancy>
+	</OccupancyList>
+</HotelValuedAvailRQ>
