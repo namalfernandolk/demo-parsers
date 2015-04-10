@@ -18,7 +18,7 @@ public class TestUtility {
 				byte[] 				byteSet 			= new byte[length];
 				fis.read(byteSet);
 				String 				response 			= new String(byteSet);
-				System.out.println("xmlFiletoString().response : " + response);
+//				System.out.println("xmlFiletoString().response : " + response);
 				return response;
 			}
 

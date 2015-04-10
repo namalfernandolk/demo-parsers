@@ -19,6 +19,7 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import xml.TestUtility;
@@ -42,6 +43,7 @@ public class TestAxiomParser {
 	}
 
 	@Test
+	@Ignore
 	public void test() {
 
 		XMLStreamReader parser;
@@ -93,6 +95,27 @@ public class TestAxiomParser {
 			e.printStackTrace();
 		}
 
+	}
+	
+	@Test
+	public void testMadhurangaXML() {
+		
+	XMLStreamReader parser;
+		
+		try {
+
+			parser 															= XMLInputFactory.newInstance().createXMLStreamReader(new StringBufferInputStream(((String)TestUtility.xmlFiletoString("/home/namal/Downloads/testttt.xml")).replaceAll("xmlns=\"http://traveltalk.com/wsHotelAvail\"", "")));
+			OMElement 					documentElement 					= new StAXOMBuilder(parser).getDocumentElement();
+			
+			AXIOMXPath 					runSecondTicketsLeaseNumberPath 				= new AXIOMXPath("string(/xsi:RunTickets/RunTicket[2]/OriginDetails/LeaseDetails/LeaseNumber)");
+			runSecondTicketsLeaseNumberPath.addNamespace("xsi", 		"http://www.w3.org/2001/XMLSchema-instance");
+			
+			String runSecondTicketsLeaseNumber  = (String)runSecondTicketsLeaseNumberPath.selectSingleNode(documentElement);
+			System.out.println("testMadhurangaXML().runSecondTicketsLeaseNumber : " + runSecondTicketsLeaseNumber);
+
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 
 }
